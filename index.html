@@ -6,153 +6,63 @@
   <title>🧭 Assessment – Assistenz der Geschäftsführung</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f6f9;
-      color: #1a2b5f;
-      min-height: 100vh;
-    }
-    header {
-      background: #1a2b5f;
-      color: white;
-      padding: 32px 24px 24px;
-      text-align: center;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; color: #1a2b5f; }
+    header { background: #1a2b5f; color: white; padding: 32px 24px 24px; text-align: center; }
     header h1 { font-size: 1.6rem; font-weight: 700; }
     header p { margin-top: 6px; font-size: 0.95rem; opacity: 0.8; }
-    .meta {
-      display: flex; justify-content: center; gap: 24px;
-      margin-top: 16px; flex-wrap: wrap;
-    }
-    .meta span {
-      background: rgba(255,255,255,0.15);
-      padding: 6px 14px; border-radius: 20px;
-      font-size: 0.85rem;
-    }
-    .container {
-      max-width: 860px;
-      margin: 32px auto;
-      padding: 0 16px 60px;
-    }
-    .section {
-      background: white;
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #1a2b5f;
-      margin-bottom: 4px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .section-desc {
-      font-size: 0.88rem;
-      color: #666;
-      margin-bottom: 20px;
-    }
+    .meta { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+    .meta span { background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; }
+    .container { max-width: 860px; margin: 32px auto; padding: 0 16px 60px; }
+    .section { background: white; border-radius: 12px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .section-title { font-size: 1.1rem; font-weight: 700; color: #1a2b5f; margin-bottom: 4px; }
+    .section-desc { font-size: 0.88rem; color: #666; margin-bottom: 20px; }
     label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.92rem; }
     .sub-label { font-weight: 400; color: #555; font-size: 0.85rem; margin-bottom: 4px; }
-    .task-card {
-      background: #f8f9fb;
-      border: 1px solid #e0e4ef;
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-    }
+    .task-card { background: #f8f9fb; border: 1px solid #e0e4ef; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
     .task-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; }
-    .priority-group {
-      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;
-    }
-    .priority-group label {
-      display: flex; align-items: center; gap: 6px;
-      font-weight: 400; cursor: pointer; font-size: 0.9rem;
-      background: white; border: 1px solid #ddd;
-      padding: 6px 12px; border-radius: 6px;
-      transition: all 0.15s;
-    }
+    .priority-group { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .priority-group label { display: flex; align-items: center; gap: 6px; font-weight: 400; cursor: pointer; font-size: 0.9rem; background: white; border: 1px solid #ddd; padding: 6px 14px; border-radius: 6px; transition: all 0.15s; }
     .priority-group input[type=radio] { display: none; }
-    .priority-group input[type=radio]:checked + span {
-      font-weight: 600;
-    }
-    .priority-group label:has(input[value="1"]:checked) { background: #ffe5e5; border-color: #ff3d1f; color: #c0200a; }
-    .priority-group label:has(input[value="2"]:checked) { background: #fff3e0; border-color: #f5a623; color: #b36a00; }
-    .priority-group label:has(input[value="3"]:checked) { background: #e8f5e9; border-color: #4caf50; color: #2e7d32; }
-    select, textarea, input[type=text], input[type=email] {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #d0d5e8;
-      border-radius: 8px;
-      font-size: 0.92rem;
-      font-family: inherit;
-      color: #1a2b5f;
-      background: white;
-      transition: border-color 0.2s;
-    }
-    select:focus, textarea:focus, input:focus {
-      outline: none;
-      border-color: #1a2b5f;
-    }
+    select, textarea, input[type=text], input[type=email] { width: 100%; padding: 10px 12px; border: 1px solid #d0d5e8; border-radius: 8px; font-size: 0.92rem; font-family: inherit; color: #1a2b5f; background: white; }
+    select:focus, textarea:focus, input:focus { outline: none; border-color: #1a2b5f; }
     textarea { resize: vertical; min-height: 80px; }
-    .delegation-row {
-      display: flex; gap: 10px; margin-top: 10px;
-    }
-    .delegation-row select { flex: 0 0 160px; }
+    .delegation-row { display: flex; gap: 10px; margin-top: 10px; }
+    .delegation-row select { flex: 0 0 180px; }
     .delegation-row textarea { flex: 1; min-height: 60px; }
-    .info-box {
-      background: #eef1fb;
-      border-left: 4px solid #1a2b5f;
-      border-radius: 0 8px 8px 0;
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      font-size: 0.88rem;
-      color: #333;
-    }
-    .candidate-info {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-      margin-bottom: 20px;
-    }
-    @media (max-width: 600px) {
-      .candidate-info { grid-template-columns: 1fr; }
-      .delegation-row { flex-direction: column; }
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 16px;
-      background: #ff3d1f;
-      color: white;
-      font-size: 1rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+    .info-box { background: #eef1fb; border-left: 4px solid #1a2b5f; border-radius: 0 8px 8px 0; padding: 12px 16px; margin-bottom: 20px; font-size: 0.88rem; color: #333; }
+    .candidate-info { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+    .submit-btn { width: 100%; padding: 16px; background: #ff3d1f; color: white; font-size: 1rem; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; }
     .submit-btn:hover { background: #d92e12; }
-    .timer {
-      position: fixed;
-      top: 16px; right: 16px;
-      background: #1a2b5f;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 1rem;
-      z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
+    .timer { position: fixed; top: 16px; right: 16px; background: #1a2b5f; color: white; padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 1rem; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
     .timer.warning { background: #f5a623; }
     .timer.danger { background: #ff3d1f; }
-    .success-screen {
-      display: none;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .success-screen h2 { font-size: 1.8rem; color: #1a2b5f; margin-bottom: 12px; }
-    .success-screen p { color: #555; font-size: 1rem; }
-    .char-count { font-size: 0.78rem; color: #999; text-align: right; margin-top: 4px; }
+    @media (max-width:600px) { .candidate-info { grid-template-columns: 1fr; } .delegation-row { flex-direction: column; } }
+
+    /* === ERGEBNIS-SCREEN === */
+    #ergebnis-screen { display: none; max-width: 860px; margin: 32px auto; padding: 0 16px 60px; }
+    .ergebnis-header { background: #1a2b5f; color: white; border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 24px; }
+    .ergebnis-header h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    .score-circle { display: inline-block; background: white; color: #1a2b5f; border-radius: 50%; width: 120px; height: 120px; line-height: 120px; font-size: 2rem; font-weight: 900; margin: 20px 0; }
+    .badge { display: inline-block; padding: 8px 24px; border-radius: 20px; font-weight: 700; font-size: 1.1rem; margin-top: 8px; }
+    .badge.bestanden { background: #4caf50; color: white; }
+    .badge.nicht-bestanden { background: #ff3d1f; color: white; }
+    .punkte-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .punkte-card { background: white; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .punkte-card .zahl { font-size: 2rem; font-weight: 900; color: #1a2b5f; }
+    .punkte-card .label { font-size: 0.82rem; color: #888; margin-top: 4px; }
+    .aufgaben-table { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; overflow-x: auto; }
+    .aufgaben-table h3 { font-size: 1rem; margin-bottom: 16px; color: #1a2b5f; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    th { background: #f4f6f9; padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #e0e4ef; }
+    td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    .ok { color: #2e7d32; font-weight: 700; }
+    .fail { color: #c62828; font-weight: 700; }
+    .half { color: #e65100; font-weight: 700; }
+    .antwort-section { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 24px; }
+    .antwort-section h3 { font-size: 1rem; margin-bottom: 12px; color: #1a2b5f; }
+    .antwort-text { background: #f8f9fb; border-radius: 8px; padding: 14px; font-size: 0.9rem; white-space: pre-wrap; border: 1px solid #e0e4ef; }
+    .musterloesung { background: #eefbee; border-left: 4px solid #4caf50; border-radius: 0 8px 8px 0; padding: 14px 16px; margin-top: 14px; font-size: 0.88rem; }
+    .musterloesung strong { display: block; margin-bottom: 6px; color: #2e7d32; }
   </style>
 </head>
 <body>
@@ -169,474 +79,260 @@
   </div>
 </header>
 
-<div class="container">
+<div class="container" id="formular">
 
-  <!-- Kandidaten-Info -->
   <div class="section">
     <div class="section-title">👤 Deine Angaben</div>
-    <div class="section-desc">Bitte zuerst ausfüllen, bevor du mit dem Assessment beginnst.</div>
+    <div class="section-desc">Bitte zuerst ausfüllen.</div>
     <div class="candidate-info">
-      <div>
-        <label>Vollständiger Name</label>
-        <input type="text" id="name" placeholder="Max Mustermann" required />
-      </div>
-      <div>
-        <label>E-Mail-Adresse</label>
-        <input type="email" id="email" placeholder="max@beispiel.de" required />
-      </div>
-      <div>
-        <label>Datum</label>
-        <input type="text" id="datum" readonly />
-      </div>
-      <div>
-        <label>Startzeit</label>
-        <input type="text" id="startzeit" readonly />
-      </div>
+      <div><label>Vollständiger Name</label><input type="text" id="name" placeholder="Max Mustermann" required /></div>
+      <div><label>E-Mail-Adresse</label><input type="email" id="email" placeholder="max@beispiel.de" required /></div>
+      <div><label>Datum</label><input type="text" id="datum" readonly /></div>
+      <div><label>Startzeit</label><input type="text" id="startzeit" readonly /></div>
     </div>
   </div>
 
-  <!-- Teil 1 -->
   <div class="section">
     <div class="section-title">🧩 Teil 1 – Priorisieren & Strukturieren</div>
-    <div class="section-desc">
-      Es ist Dienstagmorgen, der 10. des Monats. Mehrere Themen landen gleichzeitig auf deinem Tisch.<br>
-      Du hast Unterstützung durch <strong>Werkstudentin Lena</strong> (einfache, vorbereitende Aufgaben).<br><br>
-      Vergib für jede Aufgabe eine Priorität und entscheide, wer sie übernimmt.
-    </div>
+    <div class="section-desc">Es ist Dienstagmorgen, der 10. des Monats. Du hast Unterstützung durch <strong>Werkstudentin Lena</strong>.</div>
+    <div class="info-box">🔴 <strong>Priorität 1</strong> = sofort / heute &nbsp;|&nbsp; 🟠 <strong>Priorität 2</strong> = 24–48 Std. &nbsp;|&nbsp; 🟢 <strong>Priorität 3</strong> = kann warten</div>
 
-    <div class="info-box">
-      🔴 <strong>Priorität 1</strong> = sofort / heute &nbsp;|&nbsp;
-      🟠 <strong>Priorität 2</strong> = 24–48 Std. &nbsp;|&nbsp;
-      🟢 <strong>Priorität 3</strong> = kann warten
-    </div>
-
-    <!-- Aufgabe 1 -->
-    <div class="task-card">
-      <div class="task-title">🧃 Getränkebestellung</div>
-      <p class="sub-label">Wilhelm übergibt dir diesen Prozess. Termin zur Übergabe einplanen.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p1" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p1" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p1" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d1">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b1" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 2 -->
-    <div class="task-card">
-      <div class="task-title">☕ Kaffeebohnen / Untermieter (Heike, CDev)</div>
-      <p class="sub-label">Wann kommt die nächste Lieferung? Heike wartet auf Antwort.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p2" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p2" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p2" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d2">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b2" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 3 -->
-    <div class="task-card">
-      <div class="task-title">💰 Mieteinnahmen prüfen</div>
-      <p class="sub-label">Sind die monatlichen Mieteinnahmen auf dem Konto eingegangen?</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p3" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p3" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p3" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d3">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b3" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 4 -->
-    <div class="task-card">
-      <div class="task-title">📋 SevDesk – Ausgangsrechnungen prüfen</div>
-      <p class="sub-label">Alle Ausgangsrechnungen auf Zahlungseingang prüfen, offene Posten notieren.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p4" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p4" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p4" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d4">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b4" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 5 -->
-    <div class="task-card">
-      <div class="task-title">🧾 Vorbereitende Buchhaltung (USt-Voranmeldung)</div>
-      <p class="sub-label">Morgen (11.) müssen Unterlagen beim Steuerberater sein – Säumniszuschlag droht!</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p5" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p5" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p5" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d5">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b5" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 6 -->
-    <div class="task-card">
-      <div class="task-title">👔 Bewerbermanagement</div>
-      <p class="sub-label">2 neue Bewerber:innen → Datenschutzvereinbarung senden, Interviews koordinieren.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p6" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p6" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p6" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d6">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b6" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 7 -->
-    <div class="task-card">
-      <div class="task-title">💼 LinkedIn-Post (CEO, Mitarbeitergewinnung)</div>
-      <p class="sub-label">CEO hat Stichpunkte geliefert, aber noch keine Freigabe. Post soll heute live.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p7" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p7" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p7" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d7">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b7" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 8 -->
-    <div class="task-card">
-      <div class="task-title">📅 HR / Kundenworkshop (Simon)</div>
-      <p class="sub-label">Simon reist am 11. an, kann Unterlagen nicht fertigstellen bis seine Rückfrage beantwortet ist.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p8" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p8" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p8" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d8">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b8" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 9 -->
-    <div class="task-card">
-      <div class="task-title">📊 CRM-Management (neue Interessenten)</div>
-      <p class="sub-label">Neue Interessenten ins CRM einpflegen, Sequenzen befüllen, potenzielle markieren.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p9" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p9" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p9" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d9">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b9" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 10 -->
-    <div class="task-card">
-      <div class="task-title">🖥️ Online-Training-Kunde (Google Sheet + Tonqualität)</div>
-      <p class="sub-label">Kunde kann Datei nicht öffnen und kritisiert Tonqualität. Mail wurde an dich weitergeleitet.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p10" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p10" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p10" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d10">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b10" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 11 -->
-    <div class="task-card">
-      <div class="task-title">📢 Meta Ads / Kampagne gestoppt</div>
-      <p class="sub-label">Facebook-Ads für neues Angebot gestoppt – Kreditkartenlimit erreicht.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p11" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p11" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p11" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d11">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b11" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 12 -->
-    <div class="task-card">
-      <div class="task-title">📊 Foliensatz fürs Webinar</div>
-      <p class="sub-label">Titel, Beschreibung und alte Folien vorhanden. Neuer Foliensatz soll diese Woche fertig sein.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p12" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p12" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p12" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d12">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b12" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 13 -->
-    <div class="task-card">
-      <div class="task-title">🎓 Werkstudentin Lena – neue Zielgruppe</div>
-      <p class="sub-label">Lenas SaaS-Liste aus der Schweiz ist leer. Neue Zielgruppe für CRM-Recherche benennen.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p13" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p13" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p13" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d13">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b13" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
-    <!-- Aufgabe 14 -->
-    <div class="task-card">
-      <div class="task-title">📧 Follow-up-Mail (vergangenes Webinar)</div>
-      <p class="sub-label">Teilnehmer:innen haben noch keine Mail mit Slides und Aufzeichnung erhalten.</p>
-      <div class="priority-group">
-        <label><input type="radio" name="p14" value="1"><span>🔴 Priorität 1</span></label>
-        <label><input type="radio" name="p14" value="2"><span>🟠 Priorität 2</span></label>
-        <label><input type="radio" name="p14" value="3"><span>🟢 Priorität 3</span></label>
-      </div>
-      <div class="delegation-row">
-        <select name="d14">
-          <option value="">Wer übernimmt?</option>
-          <option>Ich selbst</option>
-          <option>Lena (Werkstudentin)</option>
-          <option>Geschäftsführer</option>
-        </select>
-        <textarea name="b14" placeholder="Kurze Begründung…"></textarea>
-      </div>
-    </div>
-
+    <div id="aufgaben-container"></div>
   </div>
 
-  <!-- Teil 2 -->
   <div class="section">
     <div class="section-title">💬 Teil 2 – Kommunikationsfähigkeit</div>
-    <div class="section-desc">Formuliere eine kurze, professionelle Antwortmail auf folgende Kundenanfrage.</div>
-
-    <div class="info-box">
-      <strong>Kundenmail:</strong><br>
-      „Hallo, ich kann die verlinkte Google Sheet-Datei nicht öffnen. Außerdem war die Tonqualität in der Aufnahme leider nicht optimal – etwas schade."
-    </div>
-
+    <div class="section-desc">Formuliere eine kurze, professionelle Antwortmail.</div>
+    <div class="info-box"><strong>Kundenmail:</strong><br>„Hallo, ich kann die verlinkte Google Sheet-Datei nicht öffnen. Außerdem war die Tonqualität in der Aufnahme leider nicht optimal – etwas schade."</div>
     <label>Deine Antwortmail</label>
-    <textarea id="kundenmail" rows="10" placeholder="Betreff: …&#10;&#10;Hallo [Name],&#10;&#10;vielen Dank für Ihre Rückmeldung…" maxlength="2000"></textarea>
-    <div class="char-count"><span id="mail-count">0</span> / 2000 Zeichen</div>
+    <textarea id="kundenmail" rows="10" placeholder="Betreff: …&#10;&#10;Hallo [Name],&#10;&#10;vielen Dank für Ihre Rückmeldung…"></textarea>
   </div>
 
-  <!-- Teil 3 -->
   <div class="section">
     <div class="section-title">🤖 Teil 3 – KI & Automatisierung</div>
-    <div class="section-desc">
-      Viele Aufgaben wiederholen sich (Terminbestätigungen, Follow-ups, CRM-Pflege).<br>
-      Beschreibe in 3–5 Schritten, wie du mit KI oder Automatisierung diese Prozesse effizienter gestaltest.
-    </div>
-
+    <div class="section-desc">Beschreibe in 3–5 Schritten, wie du wiederkehrende Prozesse mit KI oder Automatisierung effizienter gestaltest.</div>
     <div id="steps-container">
-      <div class="step-block" style="margin-bottom:14px">
-        <label>Schritt 1</label>
-        <textarea name="step" placeholder="z.B. Ich analysiere alle wiederkehrenden Aufgaben…" maxlength="500"></textarea>
-        <div class="char-count"><span class="step-count">0</span> / 500</div>
-      </div>
-      <div class="step-block" style="margin-bottom:14px">
-        <label>Schritt 2</label>
-        <textarea name="step" placeholder="z.B. Ich richte Automatisierungen mit Make oder Zapier ein…" maxlength="500"></textarea>
-        <div class="char-count"><span class="step-count">0</span> / 500</div>
-      </div>
-      <div class="step-block" style="margin-bottom:14px">
-        <label>Schritt 3</label>
-        <textarea name="step" placeholder="z.B. KI-Unterstützung für Kommunikationsentwürfe…" maxlength="500"></textarea>
-        <div class="char-count"><span class="step-count">0</span> / 500</div>
-      </div>
-      <div class="step-block" style="margin-bottom:14px">
-        <label>Schritt 4 (optional)</label>
-        <textarea name="step" placeholder="z.B. CRM-Automatisierungen und Sequenzen…" maxlength="500"></textarea>
-        <div class="char-count"><span class="step-count">0</span> / 500</div>
-      </div>
-      <div class="step-block" style="margin-bottom:14px">
-        <label>Schritt 5 (optional)</label>
-        <textarea name="step" placeholder="z.B. Regelmäßige Qualitätskontrolle…" maxlength="500"></textarea>
-        <div class="char-count"><span class="step-count">0</span> / 500</div>
-      </div>
+      <div style="margin-bottom:14px"><label>Schritt 1</label><textarea name="step" placeholder="z.B. Ich analysiere alle wiederkehrenden Aufgaben…"></textarea></div>
+      <div style="margin-bottom:14px"><label>Schritt 2</label><textarea name="step" placeholder="z.B. Ich richte Automatisierungen mit Make oder Zapier ein…"></textarea></div>
+      <div style="margin-bottom:14px"><label>Schritt 3</label><textarea name="step" placeholder="z.B. KI-Unterstützung für Kommunikationsentwürfe…"></textarea></div>
+      <div style="margin-bottom:14px"><label>Schritt 4 (optional)</label><textarea name="step" placeholder="z.B. CRM-Automatisierungen und Sequenzen…"></textarea></div>
+      <div style="margin-bottom:14px"><label>Schritt 5 (optional)</label><textarea name="step" placeholder="z.B. Regelmäßige Qualitätskontrolle…"></textarea></div>
     </div>
   </div>
 
-  <button class="submit-btn" onclick="submitForm()">✅ Assessment abschicken</button>
-
-  <div class="success-screen" id="success">
-    <div style="font-size:4rem">✅</div>
-    <h2>Assessment eingereicht!</h2>
-    <p>Vielen Dank. Deine Antworten wurden erfolgreich übermittelt.<br>Du erhältst zeitnah eine Rückmeldung.</p>
-  </div>
+  <button class="submit-btn" onclick="submitForm()">✅ Assessment abschicken & Auswertung anzeigen</button>
 </div>
 
+<!-- ERGEBNIS-SCREEN -->
+<div id="ergebnis-screen"></div>
+
 <script>
-  // Datum & Startzeit
-  const now = new Date();
-  document.getElementById('datum').value = now.toLocaleDateString('de-DE');
-  document.getElementById('startzeit').value = now.toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'});
+const AUFGABEN = [
+  { key:"aufgabe_1",  titel:"🧃 Getränkebestellung", info:"Wilhelm übergibt dir diesen Prozess. Termin zur Übergabe einplanen.", prio:"3", del:"Lena (Werkstudentin)" },
+  { key:"aufgabe_2",  titel:"☕ Kaffeebohnen / Untermieter (Heike, CDev)", info:"Wann kommt die nächste Lieferung? Heike wartet auf Antwort.", prio:"3", del:"Lena (Werkstudentin)" },
+  { key:"aufgabe_3",  titel:"💰 Mieteinnahmen prüfen", info:"Sind die monatlichen Mieteinnahmen auf dem Konto eingegangen?", prio:"2", del:"Ich selbst" },
+  { key:"aufgabe_4",  titel:"📋 SevDesk – Ausgangsrechnungen prüfen", info:"Alle Ausgangsrechnungen auf Zahlungseingang prüfen, offene Posten notieren.", prio:"2", del:"Ich selbst" },
+  { key:"aufgabe_5",  titel:"🧾 Vorbereitende Buchhaltung (USt-Voranmeldung)", info:"Morgen (11.) müssen Unterlagen beim Steuerberater sein – Säumniszuschlag droht!", prio:"1", del:"Geschäftsführer" },
+  { key:"aufgabe_6",  titel:"👔 Bewerbermanagement", info:"2 neue Bewerber:innen → Datenschutzvereinbarung senden, Interviews koordinieren.", prio:"2", del:"Lena (Werkstudentin)" },
+  { key:"aufgabe_7",  titel:"💼 LinkedIn-Post (CEO)", info:"CEO hat Stichpunkte, aber noch keine Freigabe. Post soll heute live.", prio:"1", del:"Geschäftsführer" },
+  { key:"aufgabe_8",  titel:"📅 HR / Kundenworkshop (Simon)", info:"Simon reist am 11. an, kann Unterlagen nicht fertigstellen bis seine Rückfrage beantwortet ist.", prio:"1", del:"Ich selbst" },
+  { key:"aufgabe_9",  titel:"📊 CRM-Management (neue Interessenten)", info:"Neue Interessenten ins CRM einpflegen, Sequenzen befüllen, potenzielle markieren.", prio:"2", del:"Lena (Werkstudentin)" },
+  { key:"aufgabe_10", titel:"🖥️ Online-Training-Kunde (Google Sheet + Tonqualität)", info:"Kunde kann Datei nicht öffnen und kritisiert Tonqualität. Mail wurde weitergeleitet.", prio:"1", del:"Ich selbst" },
+  { key:"aufgabe_11", titel:"📢 Meta Ads gestoppt", info:"Facebook-Ads für neues Angebot gestoppt – Kreditkartenlimit erreicht.", prio:"1", del:"Geschäftsführer" },
+  { key:"aufgabe_12", titel:"📊 Foliensatz fürs Webinar", info:"Titel, Beschreibung und alte Folien vorhanden. Foliensatz soll diese Woche fertig sein.", prio:"3", del:"Lena (Werkstudentin)" },
+  { key:"aufgabe_13", titel:"🎓 Werkstudentin Lena – neue Zielgruppe", info:"Lenas SaaS-Liste aus der Schweiz ist leer. Neue Zielgruppe benennen.", prio:"2", del:"Ich selbst" },
+  { key:"aufgabe_14", titel:"📧 Follow-up-Mail (vergangenes Webinar)", info:"Teilnehmer:innen haben noch keine Mail mit Slides und Aufzeichnung erhalten.", prio:"2", del:"Ich selbst" },
+];
 
-  // Timer
-  let seconds = 14 * 60;
-  const timerEl = document.getElementById('timer');
-  const countdown = setInterval(() => {
-    seconds--;
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    timerEl.textContent = `⏱ ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    if (seconds <= 180) timerEl.className = 'timer warning';
-    if (seconds <= 60) timerEl.className = 'timer danger';
-    if (seconds <= 0) {
-      clearInterval(countdown);
-      timerEl.textContent = '⏱ Zeit abgelaufen';
-      alert('Die Zeit ist abgelaufen. Das Formular wird jetzt automatisch abgeschickt.');
-      submitForm();
-    }
-  }, 1000);
+// Aufgaben rendern
+const container = document.getElementById('aufgaben-container');
+AUFGABEN.forEach((a, i) => {
+  container.innerHTML += `
+    <div class="task-card">
+      <div class="task-title">${a.titel}</div>
+      <p class="sub-label">${a.info}</p>
+      <div class="priority-group">
+        <label style="cursor:pointer"><input type="radio" name="${a.key}_prio" value="1"> 🔴 Priorität 1</label>
+        <label style="cursor:pointer"><input type="radio" name="${a.key}_prio" value="2"> 🟠 Priorität 2</label>
+        <label style="cursor:pointer"><input type="radio" name="${a.key}_prio" value="3"> 🟢 Priorität 3</label>
+      </div>
+      <div class="delegation-row">
+        <select name="${a.key}_del">
+          <option value="">Wer übernimmt?</option>
+          <option>Ich selbst</option>
+          <option>Lena (Werkstudentin)</option>
+          <option>Geschäftsführer</option>
+        </select>
+        <textarea name="${a.key}_bgr" placeholder="Kurze Begründung…"></textarea>
+      </div>
+    </div>`;
+});
 
-  // Zeichen-Counter
-  const mailTA = document.getElementById('kundenmail');
-  mailTA.addEventListener('input', () => {
-    document.getElementById('mail-count').textContent = mailTA.value.length;
+// Datum & Zeit
+const now = new Date();
+document.getElementById('datum').value = now.toLocaleDateString('de-DE');
+document.getElementById('startzeit').value = now.toLocaleTimeString('de-DE', {hour:'2-digit', minute:'2-digit'});
+
+// Timer
+let seconds = 14 * 60;
+const timerEl = document.getElementById('timer');
+const countdown = setInterval(() => {
+  seconds--;
+  const m = Math.floor(seconds / 60), s = seconds % 60;
+  timerEl.textContent = `⏱ ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  if (seconds <= 180) timerEl.className = 'timer warning';
+  if (seconds <= 60) timerEl.className = 'timer danger';
+  if (seconds <= 0) { clearInterval(countdown); timerEl.textContent = '⏱ Zeit abgelaufen!'; submitForm(); }
+}, 1000);
+
+function getPrioLabel(v) {
+  return v === "1" ? "🔴 Sofort" : v === "2" ? "🟠 24–48 Std." : v === "3" ? "🟢 Kann warten" : "–";
+}
+
+function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!name || !email) { alert('Bitte Name und E-Mail-Adresse ausfüllen.'); return; }
+
+  clearInterval(countdown);
+  timerEl.style.display = 'none';
+
+  // Daten sammeln
+  let gesamtPunkte = 0;
+  let prioRichtig = 0, prioHalb = 0, prioFalsch = 0;
+  let delRichtig = 0;
+  const detailRows = [];
+
+  AUFGABEN.forEach(a => {
+    const antwortPrio = (document.querySelector(`input[name="${a.key}_prio"]:checked`) || {}).value || '';
+    const antwortDel = (document.querySelector(`select[name="${a.key}_del"]`) || {}).value || '';
+    const bgr = (document.querySelector(`textarea[name="${a.key}_bgr"]`) || {}).value || '';
+
+    const diff = Math.abs(parseInt(antwortPrio) - parseInt(a.prio));
+    const prioP = isNaN(diff) ? 0 : diff === 0 ? 2 : diff === 1 ? 1 : 0;
+    const delP = antwortDel === a.del ? 1 : 0;
+
+    if (prioP === 2) prioRichtig++;
+    else if (prioP === 1) prioHalb++;
+    else prioFalsch++;
+    if (delP === 1) delRichtig++;
+
+    gesamtPunkte += prioP + delP;
+    detailRows.push({ titel: a.titel, antwortPrio, loesungPrio: a.prio, prioP, antwortDel, loesungDel: a.del, delP, bgr });
   });
 
-  document.querySelectorAll('textarea[name=step]').forEach((ta, i) => {
-    const counter = ta.closest('.step-block').querySelector('.step-count');
-    ta.addEventListener('input', () => { counter.textContent = ta.value.length; });
+  // Teil 2
+  const mailText = document.getElementById('kundenmail').value || '';
+  const kws = ["entschuldigung","tut mir leid","freigabe","link","zugang","qualität","vielen dank","rückmeldung","gerne","beheben"];
+  let mailP = 0;
+  const ml = mailText.toLowerCase();
+  kws.forEach(k => { if (ml.includes(k)) mailP++; });
+  if (mailText.length > 200) mailP += 2;
+  if (mailText.length > 400) mailP += 2;
+  mailP = Math.min(mailP, 10);
+  gesamtPunkte += mailP;
+
+  // Teil 3
+  const schritte = Array.from(document.querySelectorAll('textarea[name=step]')).map(t => t.value).filter(v => v.trim().length > 30);
+  const kiP = Math.min(schritte.length * 2, 10);
+  gesamtPunkte += kiP;
+
+  const maxP = 60;
+  const prozent = Math.round((gesamtPunkte / maxP) * 100);
+  const bestanden = gesamtPunkte >= 42;
+
+  // Auswertungs-HTML
+  let tableRows = '';
+  detailRows.forEach(r => {
+    const pClass = r.prioP === 2 ? 'ok' : r.prioP === 1 ? 'half' : 'fail';
+    const pIcon = r.prioP === 2 ? '✅' : r.prioP === 1 ? '⚡' : '❌';
+    const dClass = r.delP === 1 ? 'ok' : 'fail';
+    const dIcon = r.delP === 1 ? '✅' : '❌';
+    const prioA = getPrioLabel(r.antwortPrio) || '–';
+    const prioL = getPrioLabel(r.loesungPrio);
+    tableRows += `<tr>
+      <td>${r.titel}</td>
+      <td class="${pClass}">${pIcon} ${prioA}</td>
+      <td>${prioL}</td>
+      <td class="${dClass}">${dIcon} ${r.antwortDel || '–'}</td>
+      <td>${r.loesungDel}</td>
+      <td><strong>${r.prioP + r.delP}/3</strong></td>
+    </tr>`;
   });
 
-  function submitForm() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    if (!name || !email) {
-      alert('Bitte Name und E-Mail-Adresse ausfüllen.');
-      return;
-    }
+  const musterMail = `Betreff: Zugriff auf Ihre Trainingsunterlagen & Rückmeldung zur Aufnahmequalität
 
-    // Daten sammeln
-    const priorities = {};
-    const delegations = {};
-    const begruendungen = {};
-    for (let i = 1; i <= 14; i++) {
-      const r = document.querySelector(`input[name=p${i}]:checked`);
-      priorities[`aufgabe_${i}`] = r ? r.value : 'keine Angabe';
-      const sel = document.querySelector(`select[name=d${i}]`);
-      delegations[`aufgabe_${i}`] = sel ? sel.value : '';
-      const ta = document.querySelector(`textarea[name=b${i}]`);
-      begruendungen[`aufgabe_${i}`] = ta ? ta.value : '';
-    }
+Hallo [Vorname],
 
-    const steps = Array.from(document.querySelectorAll('textarea[name=step]')).map(t => t.value).filter(v => v.trim());
+vielen Dank für Ihre Rückmeldung – es tut mir leid, dass der Zugang nicht funktioniert hat.
 
-    const payload = {
-      name,
-      email,
-      datum: document.getElementById('datum').value,
-      startzeit: document.getElementById('startzeit').value,
-      abgesendet_um: new Date().toLocaleTimeString('de-DE'),
-      teil1_prioritaeten: priorities,
-      teil1_delegation: delegations,
-      teil1_begruendungen: begruendungen,
-      teil2_kundenmail: document.getElementById('kundenmail').value,
-      teil3_schritte: steps
-    };
+Ich habe Ihnen soeben eine neue Freigabe für die Google Sheet-Datei eingerichtet:
+👉 [neuer Link]
 
-    // An MILOBASE senden
-    fetch('https://69fd2dd4e5416ec116a65d1f.base44.app/api/functions/saveAssessment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    }).catch(() => {});
+Zum Thema Tonqualität: Ihr Feedback haben wir aufgenommen und prüfen aktuell eine technische Anpassung für künftige Sessions.
 
-    // Erfolgsscreen
-    clearInterval(countdown);
-    document.querySelector('.container').style.display = 'none';
-    document.getElementById('timer').style.display = 'none';
-    document.getElementById('success').style.display = 'block';
-  }
+Sollte noch etwas nicht passen, melde ich mich gerne direkt bei Ihnen.
+
+Beste Grüße
+[Name]
+Assistenz der Geschäftsführung`;
+
+  document.getElementById('formular').style.display = 'none';
+  const screen = document.getElementById('ergebnis-screen');
+  screen.style.display = 'block';
+  screen.innerHTML = `
+    <div class="ergebnis-header">
+      <h2>📊 Dein Ergebnis, ${name}</h2>
+      <div class="score-circle">${prozent}%</div>
+      <div><span class="badge ${bestanden ? 'bestanden' : 'nicht-bestanden'}">${bestanden ? '✅ BESTANDEN' : '❌ NICHT BESTANDEN'}</span></div>
+      <p style="margin-top:14px;opacity:0.85">${gesamtPunkte} von ${maxP} Punkten (mind. 42 zum Bestehen)</p>
+    </div>
+
+    <div class="punkte-grid">
+      <div class="punkte-card"><div class="zahl">${gesamtPunkte - mailP - kiP}/${maxP - 20}</div><div class="label">Punkte Teil 1<br>Priorisierung & Delegation</div></div>
+      <div class="punkte-card"><div class="zahl">${mailP}/10</div><div class="label">Punkte Teil 2<br>Kundenmail</div></div>
+      <div class="punkte-card"><div class="zahl">${kiP}/10</div><div class="label">Punkte Teil 3<br>KI & Automatisierung</div></div>
+    </div>
+
+    <div class="aufgaben-table">
+      <h3>🧩 Teil 1 – Detailauswertung (${prioRichtig}× richtig, ${prioHalb}× fast, ${prioFalsch}× falsch | Delegation: ${delRichtig}/14 korrekt)</h3>
+      <table>
+        <thead><tr><th>Aufgabe</th><th>Deine Priorität</th><th>✅ Musterlösung</th><th>Deine Delegation</th><th>✅ Musterlösung</th><th>Punkte</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+
+    <div class="antwort-section">
+      <h3>💬 Teil 2 – Kundenmail (${mailP}/10 Punkte)</h3>
+      <label style="margin-bottom:8px">Deine Antwort:</label>
+      <div class="antwort-text">${mailText || '(keine Antwort eingegeben)'}</div>
+      <div class="musterloesung">
+        <strong>✅ Musterlösung:</strong>
+        ${musterMail.replace(/\n/g,'<br>')}
+      </div>
+    </div>
+
+    <div class="antwort-section">
+      <h3>🤖 Teil 3 – KI & Automatisierung (${kiP}/10 Punkte)</h3>
+      <label style="margin-bottom:8px">Deine Schritte:</label>
+      ${schritte.length > 0 ? schritte.map((s,i) => `<div class="antwort-text" style="margin-bottom:10px"><strong>Schritt ${i+1}:</strong> ${s}</div>`).join('') : '<p style="color:#999">Keine Schritte eingegeben.</p>'}
+      <div class="musterloesung">
+        <strong>✅ Ideale Antwort beinhaltet:</strong>
+        1. Wiederkehrende Prozesse identifizieren & dokumentieren<br>
+        2. Automatisierungs-Tools (Make, Zapier) für Workflows einrichten<br>
+        3. KI für Kommunikationsentwürfe nutzen (ChatGPT, Notion AI)<br>
+        4. CRM-Automatisierungen & Sequenzen aufsetzen<br>
+        5. Qualitätskontrolle & kontinuierliche Optimierung
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px">
+      <button onclick="window.print()" style="padding:12px 28px;background:#1a2b5f;color:white;border:none;border-radius:8px;font-size:0.95rem;cursor:pointer;margin-right:10px">🖨️ Ergebnis drucken</button>
+      <button onclick="location.reload()" style="padding:12px 28px;background:#ff3d1f;color:white;border:none;border-radius:8px;font-size:0.95rem;cursor:pointer">🔄 Neues Assessment starten</button>
+    </div>`;
+
+  window.scrollTo(0,0);
+}
 </script>
 </body>
 </html>
